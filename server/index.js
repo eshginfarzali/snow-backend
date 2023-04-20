@@ -11,7 +11,7 @@ import salesRoutes from "./routes/sales.js"
 import subcategoryRoutes from "./routes/subcategory.js"
 
 //data imports
-import User from "./models/user.js"
+import User from "./models/User.js"
 import { dataUser } from './data/index.js';
 
 
