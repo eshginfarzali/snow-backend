@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema(
   {
-    name: {
+    userName: {
       type: String,
       required: true,
       min: 2,
@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema(
     },
 
     role: {
-      enum: ["user", "admin", "superadmin"],
+      enum: ["expeditor", "admin", "superadmin"],
       type: String,
       default: "admin"
     },

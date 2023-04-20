@@ -30,7 +30,6 @@ app.use("/expeditors", expeditorsRoutes);
 app.use("/management", managementRoutes);
 app.use("/products", productsRoutes);
 app.use("/sales", salesRoutes);
-app.use("/subcategory", subcategoryRoutes);
 
 
 
@@ -46,3 +45,21 @@ mongoose
             /* ONLY ADD DATA ONE TIME */
         User.insertMany(dataUser)
     })
+
+
+
+    app.post('/management/user', async (req, res)=>{
+        try{
+          const newUser = new User({
+            userName: req.body.userName,
+            email: req.body.email,
+            password: req.body.password,
+            role: req.body.role,
+          })
+      
+          const user = await newUser.save();
+          res.status(200).json(user);
+        }catch(err){
+          console.log(err);
+        }
+      })
