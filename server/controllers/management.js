@@ -24,3 +24,14 @@ export const postAdmins = async (req, res) => {
     console.log(err);
   }
 };
+
+export const getSuperAdmin = async (req, res) => {
+  try {
+    const superAdmin = await User.find({ role: "superadmin" }).select(
+      "-password"
+    );
+    res.status(200).json(superAdmin);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};

@@ -1,5 +1,9 @@
 import express from "express";
-import {getAdmins, postAdmins} from "../controllers/management.js";
+import {
+  getAdmins,
+  postAdmins,
+  getSuperAdmin,
+} from "../controllers/management.js";
 
 const router = express.Router();
 
@@ -8,5 +12,8 @@ router.get("/admins", getAdmins);
 
 // POST - admins
 router.post("/admins", postAdmins);
+
+// GET - superadmin
+router.get("/superadmin", getSuperAdmin);
 
 export default router;
